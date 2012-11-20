@@ -1,0 +1,8 @@
+.autotest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/seize
+lib/seize.rb
+test/test_seize.rb

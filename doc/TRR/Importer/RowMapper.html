@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class TRR::Importer::RowMapper - seize-1.0.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/seize/row_mapper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-before_save">#before_save</a>
+    
+    <li><a href="#method-i-cell">#cell</a>
+    
+    <li><a href="#method-i-convert_to_method_if_needed">#convert_to_method_if_needed</a>
+    
+    <li><a href="#method-i-create_field_mapping">#create_field_mapping</a>
+    
+    <li><a href="#method-i-field">#field</a>
+    
+    <li><a href="#method-i-find_by_key">#find_by_key</a>
+    
+    <li><a href="#method-i-ignored">#ignored</a>
+    
+    <li><a href="#method-i-is_present_if">#is_present_if</a>
+    
+    <li><a href="#method-i-map">#map</a>
+    
+    <li><a href="#method-i-sense_nested_objects">#sense_nested_objects</a>
+    
+    <li><a href="#method-i-update_on">#update_on</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../History_txt.html">History</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../TRR.html">TRR</a>
+  
+    <li><a href="../../TRR/Importer.html">TRR::Importer</a>
+  
+    <li><a href="../../TRR/Importer/ClassAccessor.html">TRR::Importer::ClassAccessor</a>
+  
+    <li><a href="../../TRR/Importer/CollectionRelationAccess.html">TRR::Importer::CollectionRelationAccess</a>
+  
+    <li><a href="../../TRR/Importer/FieldMapper.html">TRR::Importer::FieldMapper</a>
+  
+    <li><a href="../../TRR/Importer/FieldMapping.html">TRR::Importer::FieldMapping</a>
+  
+    <li><a href="../../TRR/Importer/Job.html">TRR::Importer::Job</a>
+  
+    <li><a href="../../TRR/Importer/MappingOperation.html">TRR::Importer::MappingOperation</a>
+  
+    <li><a href="../../TRR/Importer/NestedObjectFieldMapper.html">TRR::Importer::NestedObjectFieldMapper</a>
+  
+    <li><a href="../../TRR/Importer/NestedObjectSensor.html">TRR::Importer::NestedObjectSensor</a>
+  
+    <li><a href="../../TRR/Importer/RelationshipFieldMapper.html">TRR::Importer::RelationshipFieldMapper</a>
+  
+    <li><a href="../../TRR/Importer/RowMapper.html">TRR::Importer::RowMapper</a>
+  
+    <li><a href="../../TRR/Importer/ScalarAccess.html">TRR::Importer::ScalarAccess</a>
+  
+    <li><a href="../../TRR/Importer/ScalarRelationAccess.html">TRR::Importer::ScalarRelationAccess</a>
+  
+    <li><a href="../../TRR/Importer/TopologicallySortableMultiHash.html">TRR::Importer::TopologicallySortableMultiHash</a>
+  
+    <li><a href="../../Seize.html">Seize</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TRR::Importer::RowMapper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(target_class, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">target_class</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@mappings</span> = []
+  <span class="ruby-ivar">@sensors</span> = []
+  <span class="ruby-ivar">@current_mapping_target</span> = <span class="ruby-ivar">@mappings</span>
+
+  <span class="ruby-ivar">@target_class</span> = <span class="ruby-identifier">target_class</span>
+  <span class="ruby-identifier">instance_eval</span> &amp;<span class="ruby-identifier">block</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-before_save" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">before_save</span><span
+            class="method-args">(root)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="before_save-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">before_save</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-comment"># override me!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- before_save-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- before_save-method -->
+
+    
+      <div id="method-i-cell" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cell</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cell-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cell</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">cell_mappers</span> = []
+  <span class="ruby-ivar">@current_mapping_target</span> = <span class="ruby-identifier">cell_mappers</span>
+  <span class="ruby-identifier">instance_eval</span> &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-ivar">@mappings</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cell_mappers</span>
+  <span class="ruby-ivar">@current_mapping_target</span> = <span class="ruby-ivar">@mappings</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cell-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cell-method -->
+
+    
+      <div id="method-i-convert_to_method_if_needed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert_to_method_if_needed</span><span
+            class="method-args">(callable)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="convert_to_method_if_needed-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_to_method_if_needed</span>(<span class="ruby-identifier">callable</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">callable</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Symbol</span>
+
+    <span class="ruby-identifier">target</span> = <span class="ruby-identifier">method</span>(<span class="ruby-identifier">callable</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+      <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">arg1</span>, <span class="ruby-identifier">arg2</span> <span class="ruby-operator">|</span>
+        <span class="ruby-identifier">target</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">arg1</span>, <span class="ruby-identifier">arg2</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">arg1</span>, <span class="ruby-identifier">arg2</span> = <span class="ruby-keyword">nil</span> <span class="ruby-operator">|</span>
+        <span class="ruby-identifier">target</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">arg1</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">callable</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- convert_to_method_if_needed-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- convert_to_method_if_needed-method -->
+
+    
+      <div id="method-i-create_field_mapping" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_field_mapping</span><span
+            class="method-args">(name, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_field_mapping-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_field_mapping</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">clone</span>
+  [<span class="ruby-value">:resolve_key_with</span>, <span class="ruby-value">:create_with</span>, <span class="ruby-value">:resolve_with</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">symbol</span> <span class="ruby-operator">|</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-identifier">symbol</span>] = <span class="ruby-identifier">convert_to_method_if_needed</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">symbol</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">symbol</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">mapper</span> = <span class="ruby-constant">ClassAccessor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@target_class</span>).<span class="ruby-identifier">field</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-constant">FieldMapping</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">mapper</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_field_mapping-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_field_mapping-method -->
+
+    
+      <div id="method-i-field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">field</span><span
+            class="method-args">(name, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="field-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">field</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@current_mapping_target</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">create_field_mapping</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- field-method -->
+
+    
+      <div id="method-i-find_by_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_key</span><span
+            class="method-args">(operation)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_by_key-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by_key</span>(<span class="ruby-identifier">operation</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">operation</span>.<span class="ruby-identifier">value_after_resolution</span>(<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">finder_name</span> = <span class="ruby-node">&quot;find_by_#@key_field_name&quot;</span>
+  <span class="ruby-ivar">@target_class</span>.<span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">finder_name</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_key-method -->
+
+    
+      <div id="method-i-ignored" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ignored</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ignored-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ignored</span>
+  <span class="ruby-ivar">@mappings</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ignored-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ignored-method -->
+
+    
+      <div id="method-i-is_present_if" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_present_if</span><span
+            class="method-args">(nested_object_name, func)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is_present_if-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_present_if</span>(<span class="ruby-identifier">nested_object_name</span>, <span class="ruby-identifier">func</span>)
+  <span class="ruby-identifier">callable</span> = <span class="ruby-identifier">convert_to_method_if_needed</span>(<span class="ruby-identifier">func</span>)
+  <span class="ruby-identifier">sensor</span> = <span class="ruby-constant">ClassAccessor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@target_class</span>).<span class="ruby-identifier">nested_object_sensor</span>(<span class="ruby-identifier">nested_object_name</span>, <span class="ruby-identifier">callable</span>)
+  <span class="ruby-ivar">@sensors</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sensor</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_present_if-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_present_if-method -->
+
+    
+      <div id="method-i-map" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">map</span><span
+            class="method-args">(row)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="map-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">row</span>)
+  <span class="ruby-identifier">operations</span> = <span class="ruby-constant">TopologicallySortableMultiHash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">row</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-ivar">@mappings</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cell</span>, <span class="ruby-identifier">mapping_or_mappings</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">mapping_or_mappings</span>
+
+      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">cell</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">cell</span> <span class="ruby-comment"># CSV may return a header w/the value, but we don't need it.</span>
+
+      <span class="ruby-identifier">mappings</span> = <span class="ruby-identifier">mapping_or_mappings</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">mapping_or_mappings</span> <span class="ruby-operator">:</span> [<span class="ruby-identifier">mapping_or_mappings</span>]
+      <span class="ruby-identifier">mappings</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">mapping</span> <span class="ruby-operator">|</span>
+        <span class="ruby-identifier">operations</span>[<span class="ruby-identifier">mapping</span>.<span class="ruby-identifier">name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MappingOperation</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">mapping</span>.<span class="ruby-identifier">mapper</span>)
+      }
+
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@key_field_name</span>
+    <span class="ruby-identifier">key_operation</span> = (<span class="ruby-identifier">operations</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@key_field_name</span>)[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">root</span> = <span class="ruby-identifier">find_by_key</span>(<span class="ruby-identifier">key_operation</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">root</span> = <span class="ruby-ivar">@target_class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">root</span>
+    <span class="ruby-identifier">operations</span>.<span class="ruby-identifier">tsort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">field_name</span> <span class="ruby-operator">|</span>
+      <span class="ruby-identifier">operations</span>[<span class="ruby-identifier">field_name</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">operation</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">operation</span>.<span class="ruby-identifier">perform_on</span>(<span class="ruby-identifier">root</span>) }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sense_nested_objects</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-identifier">before_save</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-identifier">root</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- map-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- map-method -->
+
+    
+      <div id="method-i-sense_nested_objects" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sense_nested_objects</span><span
+            class="method-args">(root)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sense_nested_objects-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sense_nested_objects</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-ivar">@sensors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">sensor</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">sensor</span>.<span class="ruby-identifier">delete_if_not_sensed</span>(<span class="ruby-identifier">root</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sense_nested_objects-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sense_nested_objects-method -->
+
+    
+      <div id="method-i-update_on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_on</span><span
+            class="method-args">(name, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_on-source">
+            <pre><span class="ruby-comment"># File lib/seize/row_mapper.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update_on</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@key_field_name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">field</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_on-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
