@@ -1,3 +1,5 @@
+include Seize
+
 FactoryGirl.define do
 
   factory :scarves, :class => Category do

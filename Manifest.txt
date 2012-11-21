@@ -5,4 +5,6 @@ README.txt
 Rakefile
 bin/seize
 lib/seize.rb
+lib/seize/job.rb
+lib/seize/row_mapper.rb
 test/test_seize.rb

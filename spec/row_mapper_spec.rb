@@ -1,10 +1,9 @@
 require 'support/spec_helper'
 require 'tempfile'
 require File.expand_path('../../lib/seize/row_mapper', __FILE__)
+require File.expand_path('../support/test_entities', __FILE__)
 
-include TRR::Importer
-
-
+include Seize
 
 describe "the row mapper" do
 
@@ -62,7 +61,7 @@ describe "the row mapper" do
 
   context "basic mapping" do
 
-    let(:mapper) { TRR::Importer::RowMapper.new(Designer) }
+    let(:mapper) { RowMapper.new(Designer) }
 
     it "creates an instance of the right class" do
       result = mapper.map([])
@@ -178,7 +177,7 @@ describe "the row mapper" do
 
   context "relationship mapping" do
 
-    let(:mapper) { TRR::Importer::RowMapper.new(Product) }
+    let(:mapper) { RowMapper.new(Product) }
     let(:cletus) { FactoryGirl.create :cletus }
 
     it "maps a many-valued relationship" do
@@ -307,7 +306,7 @@ describe "the row mapper" do
 
   context "nested objects" do
 
-    let(:mapper) { TRR::Importer::RowMapper.new(Product) }
+    let(:mapper) { RowMapper.new(Product) }
 
     it "maps a field in a nested object" do
       mapper.field :'variant.sku'
@@ -378,7 +377,7 @@ describe "the row mapper" do
   context "updating objects" do
 
     let(:mapper) {
-      TRR::Importer::RowMapper.new(Designer) {
+      RowMapper.new(Designer) {
         update_on :id
         field :name
       }
@@ -404,7 +403,7 @@ describe "the row mapper" do
 
 
   it "calls the before-save method" do
-    class MyRowMapper < TRR::Importer::RowMapper
+    class MyRowMapper < RowMapper
       def initialize
         super(Designer)
       end
@@ -424,7 +423,7 @@ end
 
 describe "the row mapper DSL" do
   it "takes a block correctly" do
-    mapper_with_block = TRR::Importer::RowMapper.new(Designer) { field :name }
+    mapper_with_block = RowMapper.new(Designer) { field :name }
 
     result = mapper_with_block.map %w(Cletus)
 

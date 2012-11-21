@@ -4,7 +4,7 @@ require File.expand_path('../../lib/seize/job', __FILE__)
 
 describe "the import job" do
 
-  include TRR::Importer::Job
+  include Seize::Job
 
   let(:row_mapper) { double }
   let(:reject_buffer) { "" }
@@ -128,6 +128,6 @@ describe "the import job" do
     invoke_import("whatever")
 
     reject_buffer.chomp.should eq("whatever")
-    error_buffer.should include(TRR::Importer::Job::NO_OBJECT_FOUND)
+    error_buffer.should include(Seize::Job::NO_OBJECT_FOUND)
   end
 end

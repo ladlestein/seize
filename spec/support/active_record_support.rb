@@ -1,7 +1,7 @@
 # I've ripped this out of RSpec::Rails so we can run tests that "use_transactional_fixtures" but don't
 # require Rails.
 #
-module TRR
+module Seize
 
   module SetupAndTeardownAdapter
     extend ActiveSupport::Concern
