@@ -1,18 +1,16 @@
-# -*- ruby -*-
+#require 'bundler/gemtasks'
+require 'rake'
+require 'rake/testtask'
+require 'rake/packagetask'
+require 'rubygems/package_task'
+require 'rspec/core/rake_task'
 
-require 'rubygems'
-require 'hoe'
+RSpec::Core::RakeTask.new
 
-# Hoe.plugin :compiler
-# Hoe.plugin :gem_prelude_sucks
-# Hoe.plugin :inline
-# Hoe.plugin :racc
-# Hoe.plugin :rcov
-# Hoe.plugin :rubyforge
+task :default => [:spec]
 
-Hoe.plugin :test
-Hoe.spec 'seize' do
-  developer 'Larry Edelstein', 'larry.edelstein@therealreal.com'
+spec = eval(File.read('seize.gemspec'))
+
+Gem::PackageTask.new(spec) do |p|
+  p.gem_spec = spec
 end
-
-# vim: syntax=ruby

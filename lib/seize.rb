@@ -1,7 +1,3 @@
-require File.expand_path('../../lib/seize/row_mapper', __FILE__)
-require File.expand_path('../../lib/seize/job', __FILE__)
-
-class SeizeGem
-  VERSION = '1.0.2'
-
-end
+require 'seize/version'
+require 'seize/row_mapper'
+require 'seize/job'
