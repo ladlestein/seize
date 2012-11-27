@@ -376,14 +376,13 @@ describe "the row mapper" do
 
   context "updating objects" do
 
-    let(:mapper) {
-      RowMapper.new(Designer) {
-        update_on :id
-        field :name
-      }
-    }
+    let(:mapper) { RowMapper.new(Designer) }
+
 
     it "updates objects based on a key" do
+      mapper.update_on :id
+      mapper.field :name
+
       user = Designer.create name: "stu"
       id = user.id
 
@@ -393,7 +392,22 @@ describe "the row mapper" do
       result.name.should eq("Jerry")
     end
 
+    it "can update if the key isn't the first column" do
+      user = Designer.create name: "stu"
+      id = user.id
+
+      mapper.field :name
+      mapper.update_on :id
+
+      result = mapper.map %W(Jerry #{id})
+
+      result.id.should eq(id)
+      result.name.should eq("Jerry")
+    end
+
     it "returns a nil if no object was found" do
+      mapper.update_on :id
+      mapper.field :name
       result = mapper.map %W(hey Jerry)
 
       result.should be_nil
