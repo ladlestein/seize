@@ -413,6 +413,18 @@ describe "the row mapper" do
       result.should be_nil
     end
 
+    it "creates and then updates the record if configured that way" do
+      mapper.update_on :id, can_create: true
+      mapper.field :name
+
+      mapper.map %W(3 Jerry)
+      result = mapper.map %W(3 Steve)
+
+      result.id.should eq(3)
+      result.name.should eq("Steve")
+
+    end
+
   end
 
 

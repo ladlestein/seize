@@ -54,6 +54,7 @@ module Seize
 
     def update_on(name, options = {})
       @key_field_name = name
+      @can_create = options[:can_create]
       field(name, options)
     end
 
@@ -109,6 +110,10 @@ module Seize
       if @key_field_name
         key_operation = (operations.delete @key_field_name)[0]
         root = find_by_key(key_operation)
+        if @can_create && root.nil?
+          root = @target_class.new
+          key_operation.perform_on(root)
+        end
       else
         root = @target_class.new
       end
