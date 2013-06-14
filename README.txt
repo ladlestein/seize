@@ -32,3 +32,6 @@ After checking out the source, run:
 This task will install any missing dependencies, run the tests/specs,
 and generate the RDoc.
 
+== LICENSE:
+
+Seize is licensed under the GNU General Public License. See LICENSE.txt for more info.
